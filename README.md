@@ -1,6 +1,6 @@
 # Server Tools for *adampelc.com* website
 
-## Scripts
+## Files
 
-* root.init.sh **(Call as root)** - Initialization server script. It do few things:
+* **root.init.py** - *Use it as ROOT*. Initialization server script. It do few things:
   * Checks for updates and install them.
