@@ -1,6 +1,5 @@
 # Server Tools for *adampelc.com* website
 
-## Files
+## Folders
 
-* **root.init.py** - *Use it as ROOT*. Initialization server script. It do few things:
-  * Checks for updates and install them.
+* **website** - Contains files that should be copied with or without modification to official website related directory.
