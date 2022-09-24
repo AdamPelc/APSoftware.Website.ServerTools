@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  website:
+    image: esmundosu/logicbee.ninja:latest
+    container_name: logicbee.ninja
+    stdin_open: true
+    tty: true
+    expose:
+      - 80
+      - 443
+    volumes:
+      - "/etc/letsencrypt/live/logicbee.ninja/fullchain.pem:/etc/letsencrypt/live/logicbee.ninja/fullchain.pem:ro"
+      - "/etc/letsencrypt/live/logicbee.ninja/privkey.pem:/etc/letsencrypt/live/logicbee.ninja/privkey.pem:ro"
+      - "/home/adampelc/website/logs:/var/log/nginx"
+    network_mode: host
+    restart: unless-stopped
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30
